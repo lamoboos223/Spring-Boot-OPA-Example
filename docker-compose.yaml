@@ -1,0 +1,23 @@
+version: '2'
+services:
+  opa:
+    image: openpolicyagent/opa:0.51.0
+    ports:
+      - 8181:8181
+    command:
+      - "run"
+      - "--server"
+      - "--log-format=json-pretty"
+      - "--set=decision_logs.console=true"
+      - "--set=services.nginx.url=http://bundle_server"
+      - "--set=bundles.nginx.service=nginx"
+      - "--set=bundles.nginx.resource=bundles/bundle.tar.gz"
+    depends_on:
+      - bundle_server
+
+  bundle_server:
+    image: nginx:1.20.0-alpine
+    ports:
+      - 8888:80
+    volumes:
+      - ./bundles:/usr/share/nginx/html/bundles
