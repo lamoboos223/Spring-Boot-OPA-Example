@@ -30,5 +30,20 @@ curl --location 'http://localhost:8181/v1/data/httpapi/authz' \
 }'
 ```
 ---
-#### Test the application by postman gRPC
+## Grpc
+
+after writing your `.proto` file, you should compile it with `mvn` to get the java classes needed for development.
+
+```sh
+mvn clean package
+```
+
+
+### Test the application by postman gRPC section
+1- open postman app
+
+2- go to New
+
+3- select grpc
+
 <img width="847" alt="Screenshot 2023-04-07 at 3 31 26 AM" src="https://user-images.githubusercontent.com/46426188/230517112-d4e2b12f-c7cf-460b-a777-b014aed0071a.png">
