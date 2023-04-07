@@ -20,4 +20,4 @@ services:
     ports:
       - 8888:80
     volumes:
-      - ./bundles:/usr/share/nginx/html/bundles
+      - ./opa/bundles:/usr/share/nginx/html/bundles

@@ -7,8 +7,14 @@ wget https://openpolicyagent.org/downloads/latest/opa_windows_amd64.exe
 First, create your policy files in `.rego` and place them in `./bundles` directory.
 Now build the `.rego` file with `opa` executable command (opa.exe).
 
+### build one file
 ```sh
-opa build bundles/example.rego
+opa build bundles/Example.rego
+```
+
+### build directory
+```sh
+opa build opa/policies/ -o opa/bundles/bundle.tar.gz
 ```
 
 this will generate `./bundles/bundles.tar.gz` file that will be mounted to `nginx` web server, where `opa engine` will read the policies from.
@@ -16,7 +22,7 @@ this will generate `./bundles/bundles.tar.gz` file that will be mounted to `ngin
 ---
 ## Testing the policy directly
 
-after building the `.rego` file it will be automaticlly mounted to `nginx` where the opa engine can execute it.
+after building the `.rego` file it will be automatically mounted to `nginx` where the opa engine can execute it.
 So, to test the policy just execute the following `curl`
 ```shell
 curl --location 'http://localhost:8181/v1/data/httpapi/authz' \
