@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "50e4006b-71a6-4c23-b781-b5a62ed63926",
+		"name": "opa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4810547"
+	},
+	"item": [
+		{
+			"name": "Example Policy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": {\r\n        \"user\": \"alice\",\r\n        \"path\": [\"finance\", \"salary\", \"alice\"],\r\n        \"method\": \"GET\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/data/httpapi/authz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"httpapi",
+						"authz"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Policy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": {\r\n        \"user\": \"alice\",\r\n        \"path\": [\"finance\", \"salary\", \"alice\"],\r\n        \"method\": \"GET\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1/data/httpapi/authz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1",
+								"data",
+								"httpapi",
+								"authz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Apr 2023 19:36:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decision_id\": \"1f7aac8a-f509-4e0d-88dd-a8f708aff6c0\",\n    \"result\": {\n        \"allow\": true,\n        \"subordinates\": {\n            \"alice\": [],\n            \"betty\": [\n                \"charlie\"\n            ],\n            \"bob\": [\n                \"alice\"\n            ],\n            \"charlie\": []\n        }\n    }\n}"
+				},
+				{
+					"name": "Example Policy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": {\r\n        \"user\": \"lama\",\r\n        \"path\": [\"finance\", \"salary\", \"alice\"],\r\n        \"method\": \"GET\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1/data/httpapi/authz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1",
+								"data",
+								"httpapi",
+								"authz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Apr 2023 19:37:09 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decision_id\": \"075e7cb6-e696-4224-a2ee-ef20eda2e999\",\n    \"result\": {\n        \"allow\": false,\n        \"subordinates\": {\n            \"alice\": [],\n            \"betty\": [\n                \"charlie\"\n            ],\n            \"bob\": [\n                \"alice\"\n            ],\n            \"charlie\": []\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Email Address Policy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": {\r\n        \"email_address\": \"user@mycompany.com\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/data/email/policy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"email",
+						"policy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Email Address Policy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": {\r\n        \"email_address\": \"user@mycompany.com\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1/data/email/policy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1",
+								"data",
+								"email",
+								"policy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Apr 2023 20:28:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "112"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decision_id\": \"522ef9fe-1597-45a5-906f-c4b1cce2ae1f\",\n    \"result\": {\n        \"allow\": true,\n        \"allowed_domain\": \"mycompany.com\"\n    }\n}"
+				},
+				{
+					"name": "Create Email Address Policy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": {\r\n        \"email_address\": \"user@mycompany111.com\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1/data/email/policy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1",
+								"data",
+								"email",
+								"policy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Apr 2023 20:28:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "113"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decision_id\": \"56a49dd4-c97e-4ccb-a9dc-f4366faad8d2\",\n    \"result\": {\n        \"allow\": false,\n        \"allowed_domain\": \"mycompany.com\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
