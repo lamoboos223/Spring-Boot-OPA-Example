@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "50e4006b-71a6-4c23-b781-b5a62ed63926",
+		"_postman_id": "17a9d59c-cbdc-4131-8622-cca357f0a8d5",
 		"name": "opa",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "4810547"
+		"_exporter_id": "6525188"
 	},
 	"item": [
 		{
@@ -279,6 +279,144 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"decision_id\": \"56a49dd4-c97e-4ccb-a9dc-f4366faad8d2\",\n    \"result\": {\n        \"allow\": false,\n        \"allowed_domain\": \"mycompany.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Password Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"input\": {\n        \"password\": \"Password@1234567\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/data/password/policy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"password",
+						"policy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input\": {\n        \"password\": \"123456787\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1/data/password/policy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1",
+								"data",
+								"password",
+								"policy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 15:04:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decision_id\": \"c0d45d31-8c0a-4228-96d4-02a11066f32e\",\n    \"result\": {\n        \"allow\": false\n    }\n}"
+				},
+				{
+					"name": "valid",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input\": {\n        \"password\": \"Password@1234567\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/v1/data/password/policy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"v1",
+								"data",
+								"password",
+								"policy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 16:38:53 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decision_id\": \"a509b332-6c81-429d-9e96-50faa85ee96a\",\n    \"result\": {\n        \"allow\": true\n    }\n}"
 				}
 			]
 		}
